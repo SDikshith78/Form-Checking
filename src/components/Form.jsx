@@ -2,12 +2,11 @@ import React from 'react';
 
 function Form() {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <form
         name="contact"
         method="post"
         data-netlify="true"
-        className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md"
+        className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md flex justify-center items-center min-h-screen "
         onSubmit="submit"
       >
         {/* Hidden input to identify Netlify form */}
@@ -67,7 +66,6 @@ function Form() {
           </button>
         </div>
       </form>
-    </div>
   );
 }
 
