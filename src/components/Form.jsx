@@ -1,13 +1,31 @@
 import React from 'react';
 
 function Form() {
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission (reload)
+    const form = event.target;
+
+    // Alert confirmation
+    alert('Form submitted successfully');
+
+    // Programmatically submit the form to Netlify
+    const formData = new FormData(form); 
+    fetch('/', {
+      method: 'POST',
+      body: formData,
+    })
+      .then(() => console.log('Form successfully submitted'))
+      .catch((error) => console.error('Form submission error', error));
+  };
+
   return (
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <form
         name="contact"
-        method="post"
+        method="POST"
         data-netlify="true"
-        className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md flex justify-center items-center min-h-screen "
-        onSubmit="submit"
+        className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md"
+        onSubmit={handleSubmit} // Call handleSubmit on form submission
       >
         {/* Hidden input to identify Netlify form */}
         <input type="hidden" name="form-name" value="contact" />
@@ -66,6 +84,7 @@ function Form() {
           </button>
         </div>
       </form>
+    </div>
   );
 }
 
