@@ -15,7 +15,7 @@ function Form() {
         {/* First Name input */}
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            First Name
+            Your Name
             <br />
             <input
               type="text"
