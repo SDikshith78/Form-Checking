@@ -3,7 +3,7 @@ import React from 'react'
 function Form() {
   return (
     <div className='flex justify-center items-center border-red-500'>
-      <form data-netlify="true" name="contact v1" method='post'  onSubmit="submit" action='/thanks.html'>
+      <form data-netlify="true" name="contact v1" method='post'  onSubmit="submit" >
 
       <input type="hidden" name="form-name" value="contact v1" />
 
